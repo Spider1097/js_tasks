@@ -1,0 +1,9 @@
+function pilindrome(str){
+    str=str.toLowerCase().replace(/\s/g, "");
+    return str===str.split("").reverse().join("");
+}
+
+var world1="racecar";
+var world2="Anna";
+
+console.log(pilindrome(world2));

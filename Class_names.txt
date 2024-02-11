@@ -1,0 +1,24 @@
+let classNames = [
+    'header', 'menu', 'menu-item', 'menu-item', 'menu-item', 'footer', 'menu', 'link', 'link', 'link', 'link'
+];
+
+let classNamesCount={};
+
+for(let i=0; i< classNames.length;i++){
+    
+    let curent_value=classNames[i]
+
+    if(classNamesCount[curent_value]){
+        classNamesCount[curent_value]+=1;
+    }
+    else{
+        classNamesCount[curent_value]=1;
+    }
+
+}
+
+let result=Object.keys(classNamesCount).sort((a,b)=> classNamesCount[b]-classNamesCount[a]);
+
+console.log(result);
+
+//let result = [ 'link', 'menu-item', 'menu', 'header', 'footer' ];

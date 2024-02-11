@@ -1,0 +1,30 @@
+var input1 = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+var input2 = [1, 1];
+var input3 = [4, 3, 2, 1, 4];
+var input4 = [1, 2, 1];
+
+function maxArea(heights) {
+    var result = 0;
+    var left = 0;
+    var right = heights.length - 1;
+
+    while (left < right) {
+        let curentVoluem = Math.min(heights[left], heights[right]) * (right - left);
+        result = Math.max(result, curentVoluem);
+
+        if (heights[left] < heights[right]) {
+            left += 1;
+        }
+        else {
+            right -= 1;
+        }
+
+    }
+
+    return result;
+};
+
+console.log(maxArea(input1));
+console.log(maxArea(input2));
+console.log(maxArea(input3));
+console.log(maxArea(input4));

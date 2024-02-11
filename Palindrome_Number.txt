@@ -1,0 +1,55 @@
+function Polidrom(num){
+
+    if(num<0 || num%10===0 && num<10){
+        return false;
+    }
+
+    let number=num.toString().split("")
+
+    let left=0;
+    let right=number.length-1;
+
+    while(left<=right){
+
+        if(number[left]===number[right]){
+            left+=1;
+            right-=1;
+        }
+        else{
+            return false;
+        }
+}
+    return true;
+}
+
+let input1=121;
+let input2=-121;
+let input3=80;
+
+console.log(Polidrom(input1));
+
+////////////////////////////////////////////////////////////
+
+function Polidrom(num){
+
+    if(num<0 || num%10===0 && num<10){
+        return false;
+    }
+
+    let rev=0;
+
+    while(num>rev){
+        console.log(num,rev);
+        rev *=10;
+        rev += num%10;
+        num=Math.trunc(num/10);
+    }
+
+    return num===rev || num===Math.trunc(rev/10);
+}
+
+let input1=121;
+let input2=-121;
+let input3=80;
+
+console.log(Polidrom(input1));

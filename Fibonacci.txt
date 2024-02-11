@@ -1,0 +1,16 @@
+function Fibonacci(num){
+    var result=[0,1];
+
+    for(var i=2; i<=num; i++){
+
+        var prevnum1=result[i-1];
+        var prevnum2=result[i-2];
+        result.push(prevnum1+prevnum2);
+    }
+
+    return result[num];
+}
+
+input1=7;
+
+console.log(Fibonacci(input1));

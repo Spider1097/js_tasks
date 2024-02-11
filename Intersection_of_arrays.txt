@@ -1,0 +1,29 @@
+var input1 = [1,2,2,1];
+var input2 = [2,2];
+
+var input3 = [4,9,5];
+var input4 = [9,4,9,8,4];
+
+function solveing(num1, num2){
+var result=[];
+map=num1.reduce((acc,i)=>{
+    acc[i]=acc[i] ? acc[i]+1:1;
+    return acc;
+},{})
+
+    for(var i=0; i<num2.length; i++){
+var current=num2[i];
+var count=map[current];
+
+        if(count !=0 && count>0){
+            result.push(current);
+            map[current]-=1;
+        }
+
+    }
+
+    return result;
+};
+
+console.log(solveing(input1,input2));
+console.log(solveing(input3,input4));

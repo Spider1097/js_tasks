@@ -1,0 +1,29 @@
+function stock(arry) {
+
+    let result = 0;
+    let min_value = arry[0];
+
+    for (let i = 0; i < arry.length; i++) {
+
+        let curent_value = arry[i];
+
+        if (curent_value < min_value) {
+            min_value = curent_value;
+        }
+
+        if (curent_value - min_value > result) {
+            result = curent_value - min_value;
+
+        }
+
+    }
+
+    return result;
+
+}
+
+let input1 = [7, 1, 5, 3, 6, 4];
+let input2 = [7, 6, 4, 3, 1];
+
+console.log(stock(input1));
+console.log(stock(input2));

@@ -1,0 +1,27 @@
+function table_move(arry,k){
+
+    let result1=[];
+    let result2=[];
+    let table=arry;
+
+    for(let i=0; i<table.length; i++){
+
+        if(result2.length<k){
+            result2.push(table[i]);
+        }
+        else{
+            result1.push(table[i]);
+        }
+
+    }
+
+    result1=result1.concat(result2)
+
+    return result1;
+
+}
+
+let input = [1,2,3,4,5,6,7,8,9];
+let move=4;
+
+console.log(table_move(input,move))

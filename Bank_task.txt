@@ -1,0 +1,55 @@
+function iwantmoney(value) {
+
+var map = new Map();
+var curent_value = value;
+
+    while (curent_value >= 100) {
+        if (map.has("100")) {
+            map.set("100", map.get("100") + 1)
+            curent_value -= 100;
+        }
+        else {
+            map.set("100", 1)
+            curent_value -= 100;
+        }
+    }
+
+    while (curent_value >= 50) {
+        if (map.has("50")) {
+            map.set("50", map.get("50") + 1)
+            curent_value -= 50;
+        }
+        else {
+            map.set("50", 1)
+            curent_value -= 50;
+        }
+    }
+
+    while (curent_value >= 20) {
+        if (map.has("20")) {
+            map.set("20", map.get("20") + 1)
+            curent_value -= 20;
+        }
+        else {
+            map.set("20", 1)
+            curent_value -= 20;
+        }
+    }
+
+while (curent_value >= 10) {
+    if (map.has("10")) {
+        map.set("10", map.get("10") + 1)
+        curent_value -= 10;
+    }
+    else {
+        map.set("10", 1)
+        curent_value -= 10;
+    }
+}
+
+    return map;
+}
+
+var value = 220;
+
+console.log(iwantmoney(value));

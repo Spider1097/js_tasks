@@ -1,0 +1,44 @@
+const people = [
+    {
+        name: 'Alex',
+        city: 'Moscow',
+    },
+    {
+        name: 'Ivan',
+        city: 'Moscow',
+    },
+    {
+        name: 'Joe',
+        city: 'New York'
+    },
+    {
+        name: 'Johan',
+        city: 'Berlin'
+    },
+]
+
+function so(arr){
+
+    let result={};
+
+    let town=[];
+    let name=[];
+
+arr.forEach((item) => {
+    town=item.city;
+    name=item.name;
+
+    if(!result[town]){
+        result[town]=[];
+    }
+
+    name=name+" ";
+
+    result[town] +=name;
+
+});
+return result;
+
+}
+
+console.log(so(people))

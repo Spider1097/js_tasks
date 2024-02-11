@@ -1,0 +1,50 @@
+function unik(arry){
+
+    let result={};
+    let age=[];
+    let name=[];
+
+    arry.forEach((item) => {
+        age.push(item.age);
+        name.push(item.name);
+        });
+
+        console.log(age);
+        console.log(name);
+
+        for(let i=0; i<age.length; i++){
+            let curent_value=name[i];
+
+            if(result[curent_value]){
+                result[curent_value]=age[i];
+            }else{
+                result[curent_value]=age[i];
+            }
+
+        }
+        console.log(result);
+        console.log(age.sort(function(a, b){return b - a}));
+        age=age.sort(function(a, b){return b - a});
+        console.log(age);
+        let answet=Object.keys(result).sort((a,b,)=> result[b]-result[a]);
+
+        console.log(answet);
+
+        let map= new Map;
+
+        for(let i=0; i<age.length; i++){
+            map.set(answet[i],age[i])
+        }
+
+       return  map;
+
+    }
+
+const students = [
+    { name: 'alex', age: 20 },
+    { name: 'mike', age: 24 },
+    { name: 'masha', age: 20 },
+    { name: 'stas', age: 18 },
+  ];
+
+console.log(unik(students));

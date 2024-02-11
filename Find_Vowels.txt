@@ -1,0 +1,25 @@
+function findVowels(str,key){
+
+var result=0;
+var map = new Map();
+
+for( var i=0; i<key.length; i++){
+    map.set(key[i], 0);
+}
+
+for(var i=0; i<str.length; i++){
+
+    if(map.has(str[i])){
+        result++;
+    }
+}
+
+return result;
+}
+
+var input1="hello";
+var input2="why";
+
+var key=['a','e','i','o','u'];
+
+console.log(findVowels(input1,key));

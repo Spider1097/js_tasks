@@ -1,0 +1,26 @@
+function Chunked_Array(array, n) {
+
+    let chumked = [];
+
+    for (let elem of array) {
+
+        let last = chumked[chumked.length - 1];
+
+        console.log(last)
+
+        if (!last || last.length === n) {
+            chumked.push([elem]);
+        }
+        else {
+            last.push(elem)
+        }
+
+    }
+    return chumked;
+
+}
+
+let input = [1, 4, 12, 3, 2, 6, -9, 0, 8, 5, 4]
+let number = 3;
+
+console.log(Chunked_Array(input, number));

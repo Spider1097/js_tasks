@@ -1,0 +1,18 @@
+var id=setInterval(my_func,1000);
+
+var counter=0;
+
+function my_func(){
+    counter++;
+    console.log("sec: "+ counter);
+
+    if(counter ==3){
+        clearInterval(id);
+    }
+}
+
+setTimeout(my_func2,2000);
+
+function my_func2(){
+    console.log("time is working");
+}

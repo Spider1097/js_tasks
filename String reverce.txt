@@ -1,0 +1,6 @@
+function str_rever(str){
+    return str.split("").reverse().join("")
+}
+
+var input="apple";
+console.log(str_rever(input));

@@ -1,0 +1,14 @@
+function revers_int(num){
+
+    var mines=1;
+    if(num<0){
+        mines=-1;
+    }
+
+    console.log(num.toString().split("").reverse().join(""))
+    return mines*parseInt(num.toString().split("").reverse().join(""))
+}
+
+var number=-12;
+
+console.log(revers_int(number));

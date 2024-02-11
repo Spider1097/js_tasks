@@ -1,0 +1,40 @@
+function Anagrama(str1){
+
+    var map1 = new Map();
+    var map2 = new Map();
+    var result=0;
+
+    var word1=str1[0].split("");
+    var word2=str1[1].split("");
+
+    if(word1.length !== word2.length){
+        return false;
+    }
+
+    for (var i of word1)
+    {
+        map1.set(i,0);
+    }
+
+    for (var i of word2)
+    {
+        map2.set(i,0);
+    }
+
+    for( var i of word2){
+        if(map1.has(i)){
+            result+=1;
+        }
+    }
+
+    if(result===word2.length){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+var input1=['friend','finder'];
+var input2=['hello','bye'];
+
+console.log(Anagrama(input1));

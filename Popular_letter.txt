@@ -1,0 +1,35 @@
+var input1="leetcode";//0
+var input2="loveleetcode";//2
+var input3="aabb";//-1
+
+function firstUniq(s){
+
+    var map=new Map();
+
+    for(var i=0; i<s.length;i++){
+        var current=s[i];
+
+        if(map.has(current)){
+            map.set(current,map.get(current)+1)
+        }else{
+            map.set(current,1)
+        }
+    }
+
+    var curent_value=map.get(s[0]);
+    var index=0;
+    var name="";
+    for(var i=1; i<s.length; i++){
+        if(curent_value<map.get(s[i])){
+            curent_value=map.get(s[i])
+            index=i;
+        }
+    }
+
+    return [index,curent_value]
+
+    }
+
+console.log(firstUniq(input1));
+console.log(firstUniq(input2));
+console.log(firstUniq(input3));

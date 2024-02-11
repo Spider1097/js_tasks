@@ -1,0 +1,29 @@
+var input1 = [[1, 3], [7, 6], [8, 10], [15, 18]];
+var input2 = [[11, 12], [2, 3], [5, 7], [8, 10]];
+
+function merge(intervals) {
+    if (intervals < 2) {
+        return intervals;
+    }
+
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    var result = [intervals[0]];
+
+    for (var interval of intervals) {
+
+        var recent = result[result.length - 1]
+        console.log(result[result.length - 1])
+
+        if (recent[1] >= interval[0]) {
+            recent[1] = Math.max(recent[1], interval[1])
+        } else {
+            result.push(interval);
+        }
+    }
+
+    return result;
+
+};
+
+console.log(merge(input2));
